@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWorkshopApi", "MyWorkshopApi\MyWorkshopApi.csproj", "{F5C15F5D-57B6-83BD-5BB2-8A4CFFE7F396}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5C15F5D-57B6-83BD-5BB2-8A4CFFE7F396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5C15F5D-57B6-83BD-5BB2-8A4CFFE7F396}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5C15F5D-57B6-83BD-5BB2-8A4CFFE7F396}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5C15F5D-57B6-83BD-5BB2-8A4CFFE7F396}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {83AEE7C1-97C6-4F28-BE2E-E9E0309214EB}
+	EndGlobalSection
+EndGlobal
