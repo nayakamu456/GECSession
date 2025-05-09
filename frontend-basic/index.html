@@ -23,15 +23,41 @@
       cursor: pointer;
     }
   </style>
+  <script>
+		function greet(){
+			var name = document.getElementById("nameInput").value; 
+			alert("Hello ," + name);
+		}
+    function add(){
+      var number1 = Number(document.getElementById("number1").value); 
+      var number2 = Number(document.getElementById("number2").value); 
+
+      var sum = number1 + number2;
+      var diff = number1 - number2; 
+      var product = number1 * number2; 
+      var div = number1/number2; 
+	  
+	  document.getElementById("result").value = sum;
+	  document.getElementById("output").innerText = "Sum: "+ sum +"\nDiff:"+ diff+ "\nProduct:"+ product + "\nDiv:"+ div;
+      //alert("Sum: "+ sum +"\nDiff:"+ diff+ "\nProduct:"+ product + "\nDiv:"+ div);
+    }
+  </script>
 </head>
 <body>
   <h1>JavaScript Demo</h1>
   <p>Enter your name:</p>
   <input type="text" id="nameInput" placeholder="Your name" />
-  <button >Greet</button>
+
+  <p>Enter the numbers:</p>
+  <input type="text" id="number1" placeholder="First Number" />
+  
+  <input type="text" id="number2" placeholder="Second Number" />
+  <button onclick="add();" >Add</button>
+  
+   <input type="text" id="result" placeholder="Result" />
 
   <div id="output"></div>
-
+  
   
 </body>
 </html>

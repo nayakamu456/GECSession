@@ -55,11 +55,51 @@
   <input id="name" placeholder="Name" required />
   <input id="email" placeholder="Email" required />
   <input id="age" type="number" placeholder="Age" required />
-  <button >Add Student</button>
+  <button onclick="addStudent()">Add Student</button>
 
   <h2>Student List</h2>
   <ul id="studentList"></ul>
+  <button onclick="loadStudents()">Get Students</button>
 
-  
+  <script>
+    const API_URL = "http://localhost:5258/students";
+	
+    async function addStudent() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const age = parseInt(document.getElementById("age").value.trim());
+
+      if (!name || !email || isNaN(age)) {
+        alert("Please fill in all fields correctly.");
+        return;
+      }
+
+      await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, age })
+      });
+
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("age").value = "";
+
+      loadStudents();
+    }
+
+    async function loadStudents() {
+      const response = await fetch(API_URL);
+      const students = await response.json();
+      const list = document.getElementById("studentList");
+      list.innerHTML = "";
+      students.forEach(s => {
+        const li = document.createElement("li");
+        li.textContent = `${s.name} (${s.email}, Age ${s.age})`;
+        list.appendChild(li);
+      });
+    }
+
+    loadStudents();
+  </script>
 </body>
 </html>
